@@ -1,0 +1,237 @@
+/* ---------- Reset และ base ---------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ---------- Search form ---------- */
+div[style*="padding: 10px 0;"] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+mat-form-field {
+    flex: 1;
+    min-width: 250px;
+}
+
+button[mat-raised-button] {
+    height: 36px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #115293;
+}
+
+.btn-success {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #388e3c;
+}
+
+.btn-accent {
+    background-color: #e91e63;
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #ad1457;
+}
+
+.btn-warn {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-warn:hover {
+    background-color: #d32f2f;
+}
+
+/* ---------- Table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #1976d2;
+    color: white;
+}
+
+td img {
+    border-radius: 4px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    div[style*="padding: 10px 0;"] {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button[mat-raised-button] {
+        width: 100%;
+    }
+}
+
+/* ---------- Container และ layout ---------- */
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.search-item label {
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.search-item input,
+.search-item select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    padding: 6px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #1976d2;
+}
+
+.btn-primary:hover {
+    background-color: #115293;
+}
+
+.btn-accent {
+    background-color: #e91e63;
+}
+
+.btn-accent:hover {
+    background-color: #ad1457;
+}
+
+.btn-warn {
+    background-color: #f44336;
+}
+
+.btn-warn:hover {
+    background-color: #d32f2f;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .search-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-item button {
+        width: 100%;
+    }
+}
+
+/* ปุ่มในตารางสำหรับ Details และ Edit */
+.table-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    color: #fff;
+    margin-right: 5px;
+}
+
+/* Details ปุ่มสีน้ำเงิน */
+.table-btn.details {
+    background-color: #2196f3;
+}
+
+.table-btn.details:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+/* Edit ปุ่มสีเขียว */
+.table-btn.edit {
+    background-color: #4caf50;
+}
+
+.table-btn.edit:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* ทำให้ปุ่มใน <a> ไม่โดน default style ของ a */
+a.table-link {
+    text-decoration: none;
+}
+
+/* Delete ปุ่มสีแดง */
+.table-btn.delete {
+    background-color: #f44336;
+}
+
+.table-btn.delete:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+

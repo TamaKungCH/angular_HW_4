@@ -1,0 +1,120 @@
+.form-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+        text-align: center;
+        color: #ff6f00;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .image-upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        input[type="file"] {
+            cursor: pointer;
+        }
+
+        .preview-img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        button,
+        a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 480px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+
+        .preview-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 2px dashed #ff9800;
+    border-radius: 12px;
+    background: #fff8f0;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: #ff6f00;
+        background: #fff3e0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="file"] {
+        display: none; // ซ่อน input ของ browser
+    }
+
+    .upload-label {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff9800;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+            background-color: #ff6f00;
+        }
+    }
+
+    .preview-img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+

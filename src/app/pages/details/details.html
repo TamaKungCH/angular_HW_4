@@ -1,0 +1,10 @@
+<div class="trip-details" *ngIf="trip">
+    <div class="back-btn">
+        <button routerLink="/">← กลับหน้าแรก</button>
+    </div>
+    <h2>{{ trip.name }}</h2>
+    <img [src]="trip.coverimage" [alt]="trip.name">
+    <p class="country">ประเทศ: {{ trip.country }}</p>
+    <p class="price">ราคา: {{ trip.price }}</p>
+    <p class="detail">รายละเอียด: {{ trip.detail }}</p>
+</div>

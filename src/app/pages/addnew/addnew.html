@@ -1,0 +1,51 @@
+<div class="form-container">
+  <h2>เพิ่มสถานที่ใหม่</h2>
+
+  <form (ngSubmit)="addNew()">
+
+    <!-- รูปภาพ -->
+    <!-- <div class="image-upload">
+      <img *ngIf="coverPreview" [src]="coverPreview" alt="Preview" class="preview-img" />
+      <input type="file" (change)="onFileSelected($event)" />
+    </div> -->
+
+    <!-- ชื่อ -->
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required />
+    </mat-form-field>
+
+    <!-- รายละเอียด -->
+    <mat-form-field appearance="outline">
+      <mat-label>Detail</mat-label>
+      <textarea matInput [(ngModel)]="detail" name="detail" rows="4" required></textarea>
+    </mat-form-field>
+
+    <!-- ราคา -->
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" [(ngModel)]="price" name="price" required />
+    </mat-form-field>
+
+    <!-- ประเทศ -->
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <input matInput [(ngModel)]="country" name="country" required />
+    </mat-form-field>
+
+    <!-- ทวีป / Destination -->
+    <mat-form-field appearance="outline">
+      <mat-label>Destination</mat-label>
+      <mat-select [(ngModel)]="destination" name="destination" required>
+        <mat-option *ngFor="let dist of distinations" [value]="dist.value">
+          {{ dist.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit">Add New</button>
+      <a routerLink="/" mat-raised-button color="accent">กลับ</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,81 @@
+<!-- <button mat-raised-button color="primary" (click)="callApi()">Call API</button> -->
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <title>หน้าแรก - Trip Management</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <h1>ระบบจัดการสถานที่ (Trip Management)</h1>
+        <div class="top-actions">
+            <a [routerLink]="['/addnew']"><button class="btn-success">+ เพิ่มสถานที่</button></a>
+        </div>
+    </header>
+    <div style="grid-column: 1 / -1; text-align:right;">
+        <button type="callApi" class="btn-primary" (click)="callApi()">callApi</button>
+    </div>
+    <!-- Search form: GET to /trips with query params id, name, country -->
+    <div class="search-item">
+        <label>ค้นหาด้วย ID</label>
+        <input type="number" #idInput name="id" placeholder="ระบุหมายเลขสถานที่">
+        <button type="button" class="btn-primary" (click)="findOne(idInput)">ค้นหา ID</button>
+    </div>
+
+    <div class="search-item">
+        <label>ค้นหาด้วยชื่อสถานที่</label>
+        <input type="text" #name name="id" placeholder="ระบุชื่อสถานที่">
+        <button type="button" class="btn-accent" (click)="findName(name)">FindName</button>
+    </div>
+
+    <div class="search-item">
+        <label>ค้นหาด้วยประเทศ</label>
+        <select #countrySelect name="country" [(ngModel)]="searchCountry">
+            <option value="">-- ทุกประเทศ --</option>
+            <option *ngFor="let c of uniqueCountries" [value]="c">{{ c }}</option>
+        </select>
+        <button type="button" class="btn-warn" (click)="findTripsByCountry(countrySelect.value)">
+            ค้นหาประเทศ
+        </button>
+    </div>
+
+
+
+
+    <!-- Table รายการสถานที่ (ให้ backend เติม rows) -->
+    <section>
+        <h2>รายการสถานที่</h2>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>รูปภาพ</th>
+                    <th>ชื่อสถานที่</th>
+                    <th>การจัดการ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trip of trips">
+                    <td><img [src]="trip.coverimage" [alt]="trip.name" width="150"></td>
+                    <td>{{ trip.name }}</td>
+                    <td>
+                        <a [routerLink]="['/details', trip.idx]" class="table-link">
+                            <button class="table-btn details">Details</button>
+                        </a>
+                        <a [routerLink]="['/edit', trip.idx]" class="table-link">
+                            <button class="table-btn edit">Edit</button>
+                        </a>
+                        <button class="table-btn delete" (click)="deleteTrip(trip.idx)">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+</body>
+
+</html>
